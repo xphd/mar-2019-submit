@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: tufts-acled
+  name: tufts-acled-mit
   labels:
-    app: tufts-acled
+    app: tufts-acled-mit
 spec:
   loadBalancerIP: 10.108.25.32
   type: LoadBalancer
@@ -13,14 +13,14 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    app: tufts-acled
+    app: tufts-acled-mit
 ---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: tufts-acled
+  name: tufts-acled-mit
   labels:
-    app: tufts-acled
+    app: tufts-acled-mit
 spec:
   restartPolicy: Always
   containers:
