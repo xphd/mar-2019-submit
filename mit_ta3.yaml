@@ -5,7 +5,7 @@ metadata:
   labels:
     app: tufts-acled
 spec:
-  loadBalancerIP: 10.108.25.37
+  loadBalancerIP: 10.108.25.32
   type: LoadBalancer
   ports:
     - name: http
