@@ -47,10 +47,10 @@ spec:
         - name: D3MTIMEOUT
           value: "600"
       volumeMounts:
-        - name: input-vol
+        - name: input-data
           mountPath: /input
           readOnly: true
-        - name: output-vol
+        - name: output-data
           mountPath: /output
           readOnly: false
         - name: static-data
@@ -94,10 +94,10 @@ spec:
         - name: TA2_PORT
           value: "45042"
       volumeMounts:
-        - name: input-vol
+        - name: input-data
           mountPath: /input
           readOnly: true
-        - name: output-vol
+        - name: output-data
           mountPath: /output
           readOnly: false
         - name: static-data
@@ -114,14 +114,14 @@ spec:
   imagePullSecrets:
     - name: regcred-cl
   volumes:
+    - name: input-data
+      hostPath:
+        path: /opt/datasets/seed_datasets_current/185_baseball
+        type: Directory
     - name: static-data
       hostPath:
         path: /opt/static_files/
         type: Directory
-    - name: input-vol
-      hostPath:
-        path: /opt/datasets/seed_datasets_current/185_baseball
-        type: Directory
-    - name: output-vol
+    - name: output-data
       persistentVolumeClaim:
         claimName: eval-output-pv-claim
