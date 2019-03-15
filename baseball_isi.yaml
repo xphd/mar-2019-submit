@@ -47,10 +47,10 @@ spec:
         - name: D3MTIMEOUT
           value: "600"
       volumeMounts:
-        - name: input-data
+        - name: input-vol
           mountPath: /input
           readOnly: true
-        - name: output-data
+        - name: output-vol
           mountPath: /output
           readOnly: false
         - name: static-data
@@ -97,7 +97,7 @@ spec:
         type: Directory
     - name: input-vol
       hostPath:
-        path: /opt/datasets/seed_datasets_current//185_baseball
+        path: /opt/datasets/seed_datasets_current/185_baseball
         type: Directory
     - name: output-vol
       persistentVolumeClaim:
