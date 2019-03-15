@@ -58,8 +58,8 @@ spec:
           readOnly: true
       resources:
         requests:
-          memory: 5Gi
-          cpu: 4
+          memory: 50Gi
+          cpu: 7
       ports:
         - containerPort: 45042
           hostPort: 45042
