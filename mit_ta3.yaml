@@ -47,10 +47,10 @@ spec:
         - name: D3MTIMEOUT
           value: "600"
       volumeMounts:
-        - name: input-data
+        - name: input-vol
           mountPath: /input
           readOnly: true
-        - name: output-data
+        - name: output-vol
           mountPath: /output
           readOnly: false
         - name: static-data
