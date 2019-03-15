@@ -59,7 +59,7 @@ spec:
       resources:
         requests:
           memory: 25Gi
-          cpu: 6
+          cpu: 7
       ports:
         - containerPort: 45042
           hostPort: 45042
