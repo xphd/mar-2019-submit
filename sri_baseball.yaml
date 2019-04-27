@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: sri-baseball
   labels:
-    app: sri-baseball-baseball
+    app: sri-baseball
 spec:
   loadBalancerIP: 10.108.25.35
   type: LoadBalancer
@@ -13,14 +13,14 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    app: sri-baseball-baseball
+    app: sri-baseball
 ---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sri-baseball-baseball
+  name: sri-baseball
   labels:
-    app: sri-baseball-baseball
+    app: sri-baseball
 spec:
   restartPolicy: Never
   containers:
