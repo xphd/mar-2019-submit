@@ -5,7 +5,7 @@ metadata:
   labels:
     app: tufts-isi-baseball
 spec:
-  loadBalancerIP: 10.108.25.36
+  loadBalancerIP: 10.108.25.39
   type: LoadBalancer
   ports:
     - name: http
