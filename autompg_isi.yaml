@@ -5,7 +5,7 @@ metadata:
   labels:
     app: tufts-isi-autompg
 spec:
-  loadBalancerIP: 10.108.25.38
+  loadBalancerIP: 10.108.25.34
   type: LoadBalancer
   ports:
     - name: http
