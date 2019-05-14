@@ -23,6 +23,20 @@ metadata:
     app: tufts-isi-autompg
 spec:
   restartPolicy: Never
+  imagePullSecrets:
+    - name: regcred-cl
+  volumes:
+    - name: static-data
+      hostPath:
+        path: /opt/static_files/
+        type: Directory
+    - name: input-vol
+      hostPath:
+        path: /opt/datasets/seed_datasets_current/196_autoMpg
+        type: Directory
+    - name: output-vol
+      persistentVolumeClaim:
+        claimName: eval-output-pv-claim
   containers:
     - name: isi-ta2
       imagePullPolicy: Always
@@ -88,17 +102,4 @@ spec:
       env:
         - name: TA2_PORT
           value: "45042"
-  imagePullSecrets:
-    - name: regcred-cl
-  volumes:
-    - name: static-data
-      hostPath:
-        path: /opt/static_files/
-        type: Directory
-    - name: input-vol
-      hostPath:
-        path: /opt/datasets/seed_datasets_current/196_autoMpg
-        type: Directory
-    - name: output-vol
-      persistentVolumeClaim:
-        claimName: eval-output-pv-claim
+  
